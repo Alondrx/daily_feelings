@@ -1,0 +1,33 @@
+{
+  "name": "daily_feelings",
+  "version": "1.0.0",
+  "description": "Registro de pensamientos diarios",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build-win": "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.alondrx.dailyfeelings",
+    "productName": "Daily Feelings",
+    "directories": { "output": "dist" },
+    "win": { "target": "nsis" }
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alondrx/daily_feelings.git"
+  },
+  "keywords": [],
+  "author": "Alondrx",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Alondrx/daily_feelings/issues"
+  },
+  "homepage": "https://github.com/Alondrx/daily_feelings#readme"
+}
