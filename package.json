@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "Registro de pensamientos diarios",
   "main": "main.js",
-  "scripts": {
-    "start": "electron .",
-    "build": "electron-builder",
-    "build-win": "electron-builder --win"
+ "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "build": {
     "appId": "com.alondrx.dailyfeelings",
@@ -14,9 +17,19 @@
     "directories": { "output": "dist" },
     "win": { "target": "nsis" }
   },
-  "devDependencies": {
-    "electron": "^33.0.0",
-    "electron-builder": "^25.0.5"
+   "devDependencies": {
+    "@electron-forge/cli": "^7.8.3",
+    "@electron-forge/maker-deb": "^7.8.3",
+    "@electron-forge/maker-rpm": "^7.8.3",
+    "@electron-forge/maker-squirrel": "^7.8.3",
+    "@electron-forge/maker-zip": "^7.8.3",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.8.3",
+    "@electron-forge/plugin-fuses": "^7.8.3",
+    "@electron/fuses": "^1.8.0",
+    "electron": "^34.2.0"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1"
   },
   "repository": {
     "type": "git",

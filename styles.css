@@ -1,38 +1,249 @@
-body {
-  font-family: Georgia, serif;
-  background: linear-gradient(to bottom, #f9f5e7, #e8e2d1);
-  margin: 0; padding: 20px; color: #333;
-  min-height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gamja Flower';
 }
-header { text-align: center; margin-bottom: 30px; }
-h1 { color: #8B4513; font-size: 2.8em; margin: 0; }
-form {
-  max-width: 600px; margin: 0 auto 40px;
-  background: white; padding: 25px; border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
-input, select, textarea {
-  width: 100%; padding: 12px; margin: 12px 0;
-  border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;
-  font-size: 1em;
+.mainDiv {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-button {
-  background: #8B4513; color: white; padding: 14px 30px;
-  border: none; border-radius: 8px; cursor: pointer; font-size: 1.1em;
-}
-button:hover { background: #A0522D; }
 
-#cards { display: grid; gap: 20px; max-width: 900px; margin: 0 auto; }
-.card {
-  background: white; padding: 20px; border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  border-left: 6px solid #ccc;
-  position: relative;
+.titleDiv{
+    width: 600px;
+    overflow: hidden;
+    text-align: center;
 }
-.card h3 { margin: 0 0 10px; }
-.card .mood { font-size: 2em; margin-right: 10px; }
-.card .date { color: #666; font-style: italic; }
-.delete-btn {
-  position: absolute; top: 10px; right: 10px;
-  background: none; border: none; font-size: 1.4em; cursor: pointer;
+.titleDiv .text{
+    position: relative;
+    color: #4070F4;
+    font-size: 40px;
+    font-weight: 600;
+}
+.titleDiv .text.immobile{
+    color: #FFF;
+}
+.text.mobile:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #010718;
+    border-left: 2px solid #fff;
+    animation: animate 4s steps(12) infinite;
+}
+.text.mobile.bg-ACC794:before {
+    background-color: #ACC794;
+}
+
+.text.mobile.bg-283593:before {
+    background-color: #283593;
+}
+
+.text.mobile.bg-FF7704:before {
+    background-color: #FF7704;
+}
+@keyframes animate{
+    40%, 60%{
+        left: calc(100% + 4px);
+    }
+    100%{
+        left: 0%;
+    }
+}
+.btnDiv {
+    margin: 48px;
+    display: flex;
+    flex-direction: column;
+}
+#start-btn {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 24px;
+    background-color: #fff;
+    color: #222;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
+}
+#start-btn:hover {
+    transform: scale(1.1) perspective(1px);
+    transition: 0.3 ease;
+    cursor: pointer;
+}
+
+/* Writing page */
+
+.dashboardDiv {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ACC794;
+    color: #fff;
+    transition: background-color 0.4s ease-in-out;
+}
+.emotionDiv {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 24px;
+}
+.emotionDiv h2 {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+.emoBtn {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+.btn {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    min-width: 72px;
+    max-height: 72px;
+    padding: 8px 0;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    background-color: #739159;
+    color: #fff;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+}
+.btn img {
+    width: 32px;
+    height: 32px;
+}
+.btn:hover {
+    transform: scale(1.05) perspective(1px);
+    transition: 0.3 ease;
+    cursor: pointer;
+}
+.selected-btn {
+    background-color: white !important;
+    color: black !important;
+    border: 2px solid white;
+    transform: scale(1.1);
+}
+.hover-bg1 {
+    background-color: #ACC794;
+}
+.hover-bg2 {
+    background-color: #FFB3C8;
+}
+.hover-bg3 {
+    background-color: #75E4FF;
+}
+.hover-bg4 {
+    background-color: #FFCE3F;
+}
+.hover-bg5 {
+    background-color: #83da79;
+}
+.hover-bg6 {
+    background-color: #E88015;
+}
+.hover-bg7 {
+    background-color: #7897D4;
+}
+.hover-bg8 {
+    background-color: #A4B4D4;
+}
+.hover-btn-bg1 {
+    background-color: #739159;
+}
+.hover-btn-bg2 {
+    background-color: #d16282;
+}
+.hover-btn-bg3 {
+    background-color: #41a7c0;
+}
+.hover-btn-bg4 {
+    background-color: #cf9f0f;
+}
+.hover-btn-bg5 {
+    background-color: #59b84e;
+}
+.hover-btn-bg6 {
+    background-color: #aa5907;
+}
+.hover-btn-bg7 {
+    background-color: #3a5ca1;
+}
+.hover-btn-bg8 {
+    background-color: #506794;
+}
+.bottomDiv {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+.explainFeels h2 {
+    font-size: 24px;
+    margin-bottom: 16px;    
+}
+.wishTmr h2 {
+    font-size: 24px;
+    margin-bottom: 16px;    
+}
+.bottomDiv textarea {
+    padding: 4px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    width: 100%; 
+    height: calc(1.5em * 4); 
+    line-height: 1.5em; 
+    overflow: hidden; 
+    resize: none; 
+}
+#save-btn {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 24px;
+    background-color: #fff;
+    color: #222;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
+}
+#save-btn:hover {
+    transform: scale(1.1) perspective(1px);
+    transition: 0.3 ease;
+    cursor: pointer;
+}
+.hidden {
+    opacity: 0;
+    pointer-events: none; 
 }

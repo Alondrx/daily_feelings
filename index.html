@@ -2,37 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Feelings</title>
+
+    <link rel="stylesheet" href="./styles.css">
+    <title>Daily feelings</title>
 </head>
 <body>
-    <header>
-    <h1>Daily Feelings</h1>
-    <h2>Registro de pensamientos diarios</h2>
-    </header>
+    <div class="mainDiv">
+        <div class="titleDiv">
+            <span class="text immobile">Today, I feel </span>
+            <span class="text mobile"></span>
+        </div>
 
-    <form id="feelingForm">
-        <input type="date" id="date" required>
-        <select id="mood" required>
-            <option value="">¿Cómo te sientes?</option>
-            <option value="Feliz">Feliz</option>
-            <option value="Triste">Triste</option>
-            <option value="Enojado">Enojado</option>
-            <option value="Calmado">Calmado</option>
-            <option value="Emocionado">Emocionado</option>
-            <option value="Ansioso">Ansioso</option>
-        </select>
-        <textarea id="notes" placeholder="Escribe lo que quieras..." rows="5" required></textarea>
-        <button type="submit">Guardar</button>
-    </form>
+        <div class="btnDiv">
+            <button id="start-btn">Write feelings</button>  
+        </div>
+    </div>
 
-    <section id="cardsContainer">
-        <h2>Historial de pensamientos</h2>
-        <div id="cards"></div>
-    </section>
-
-    <script src="renderer.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
